@@ -1,6 +1,6 @@
 import math
 import datetime
-xx = datetime.datetime.now()
+t_start = datetime.datetime.now()
 
 def prime_number_identifier(x):
 	sqroot = math.sqrt(x)
@@ -9,7 +9,7 @@ def prime_number_identifier(x):
 	for n in range(2, int(toprange+1)):
 		if (x % n == 0):
 			return False
-			break	
+			break
 x = 2
 listt = []
 while x < 17320:
@@ -31,5 +31,7 @@ for x in listt:
 
 
 print sorted(new_list)
-y = datetime.datetime.now()
-print y - xx
+t_final = datetime.datetime.now()
+print "Runtime: " + str(t_final - t_start)
+
+
