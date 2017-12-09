@@ -17,7 +17,7 @@ def is_factor_of_cuban_prime(x):
 	if is_prime(x) and x % 3 == 1:
 		return True
 
-
+##Comment
 x = 2
 cuban_prime_factors = []
 while x < 17320:
