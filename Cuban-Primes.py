@@ -2,32 +2,43 @@ import math
 import datetime
 t_start = datetime.datetime.now()
 
-def prime_number_identifier(x):
+## Checks if a number is prime
+def is_prime(x):
 	sqroot = math.sqrt(x)
 	sqroot1 = math.ceil(sqroot)
 	toprange = int(sqroot1)
 	for n in range(2, int(toprange+1)):
 		if (x % n == 0):
 			return False
-			break
+	return True
+
+## Checks if a number is prime and that number % 3 == 1
+def is_factor_of_cuban_prime(x):
+	if is_prime(x) and x % 3 == 1:
+		return True
+
+
 x = 2
-listt = []
+cuban_prime_factors = []
 while x < 17320:
-	if prime_number_identifier(x) != False and x % 3 == 1:
-		listt.append(x)
-	x += 1	
+	if is_factor_of_cuban_prime(x):
+		cuban_prime_factors.append(x)
+	x += 1
 
 new_list = []
 
-for x in listt:
-	for l in range(0,int(x)):
-		while l < 900:
-			l += x	
-		y = ((l)**3 - (l-1)**3)
-		if y % x == 0 and y != x:
-			while l < 1000:
-				new_list.append(l)
-				l += x
+print cuban_prime_factors
+
+
+for prime in cuban_prime_factors:
+	for num in range(0, int(prime)):
+		while num < 900:
+			num += prime
+		cuban_number = ((num)**3 - (num-1)**3)
+		if cuban_number % prime == 0 and cuban_number != prime:
+			while num < 1000:
+				new_list.append(num)
+				num += prime
 
 
 print sorted(new_list)
