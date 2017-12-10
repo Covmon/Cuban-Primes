@@ -1,4 +1,4 @@
-print "MERSENNE PRIME CALCULATOR"
+print "CUBAN PRIME CALCULATOR"
 
 import datetime
 
